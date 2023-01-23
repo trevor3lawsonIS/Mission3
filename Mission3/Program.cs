@@ -24,6 +24,7 @@ namespace Mission3
                 // Player 1 Choice
                 Console.WriteLine("Player 1, enter your choice:");
                 int iPlayer1Choice = int.Parse(Console.ReadLine());
+                iPlayer1Choice = iPlayer1Choice - 1;
                 char player1Choice = Convert.ToChar(iPlayer1Choice);
 
                 // check to see if space is taken
@@ -31,6 +32,7 @@ namespace Mission3
                 {
                     Console.WriteLine("Sorry, space " + boardArray[player1Choice] + " is already taken. Please choose another space.");
                     iPlayer1Choice = int.Parse(Console.ReadLine());
+                    iPlayer1Choice = iPlayer1Choice - 1;
                     player1Choice = Convert.ToChar(iPlayer1Choice);
                 }
                 boardArray[player1Choice] = 'X';
@@ -46,6 +48,7 @@ namespace Mission3
                 sc.PrintBoard(boardArray);
                 Console.WriteLine("Player 2, enter your choice");
                 int iPlayer2Choice = int.Parse(Console.ReadLine());
+                iPlayer2Choice = iPlayer2Choice - 1;
                 char player2Choice = Convert.ToChar(iPlayer2Choice);
 
                 // check to see if space is taken
@@ -53,9 +56,11 @@ namespace Mission3
                 {
                     Console.WriteLine("Sorry, space " + boardArray[player2Choice] + " is already taken. Please choose another space.");
                     iPlayer2Choice = int.Parse(Console.ReadLine());
+                    iPlayer2Choice = iPlayer2Choice - 1;
                     player2Choice = Convert.ToChar(iPlayer2Choice);
                 }
                 boardArray[player2Choice] = 'O';
+                sc.PrintBoard(boardArray);
 
                 // Test for winner
                 winner = sc.PrintWinner(boardArray);
